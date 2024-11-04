@@ -1,9 +1,12 @@
 name: Update Commit Hash
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to update'
+        required: true
+        default: 'main'
 
 jobs:
   update-hash:
