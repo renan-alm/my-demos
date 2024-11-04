@@ -23,6 +23,7 @@ jobs:
     - name: Update clean-up.yml with latest commit hash
       run: |
         COMMIT_HASH=${{ steps.get_commit.outputs.commit_hash }}
+        cd .github/workflows
         sed -i "s/commit_hash:.*/commit_hash: $COMMIT_HASH/" clean-up.yml
 
     - name: Commit and push changes
