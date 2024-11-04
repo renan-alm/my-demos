@@ -1,0 +1,20 @@
+name: Cinderela Clean Up
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: main
+
+    - name: Revert to specific commit
+      run: |
+        git reset --hard 221d1e8576b620d1a3a45c14aa26d0cbd2000011
+        git push --force
