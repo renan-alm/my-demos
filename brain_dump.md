@@ -11,6 +11,7 @@
 ### Implemented:
 
 #### Copilot Instructions feature under user settings:
+Source: https://github.com/fielding/copilot-instructions
 ```yaml
     "github.copilot.chat.reviewSelection.instructions": [
     {
