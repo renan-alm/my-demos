@@ -1,0 +1,31 @@
+name: Update Commit Hash
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-hash:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Get latest commit hash
+      id: get_commit
+      run: echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
+
+    - name: Update clean-up.yml with latest commit hash
+      run: |
+        COMMIT_HASH=${{ steps.get_commit.outputs.commit_hash }}
+        sed -i "s/commit_hash:.*/commit_hash: $COMMIT_HASH/" clean-up.yml
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add clean-up.yml
+        git commit -m "Update commit hash to ${{ steps.get_commit.outputs.commit_hash }}"
+        git push
