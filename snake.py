@@ -19,7 +19,7 @@ dis_height = 600
 
 # Create the display
 dis = pygame.display.set_mode((dis_width, dis_height))
-pygame.display.setCaption('Snake Game by GitHub Copilot')
+pygame.display.set_caption('Snake Game by GitHub Copilot')
 
 # Set the clock
 clock = pygame.time.Clock()
