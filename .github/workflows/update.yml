@@ -1,6 +1,10 @@
 name: Update Commit Hash
+## IDEA: Make it run only when a PR is merged to main. But it has to be a PR
 
 on:
+#   pull_request:
+#     branches:
+#         - main
   workflow_dispatch:
     inputs:
       branch:
@@ -18,7 +22,7 @@ jobs:
 
     - name: Get latest commit hash
       id: get_commit
-      run: echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
+      run: echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
 
     - name: Update clean-up.yml with latest commit hash
       run: |
