@@ -16,5 +16,5 @@ jobs:
 
     - name: Revert to specific commit
       run: |
-        git reset --hard 2d4fc044da95213e38ec677ca742aad9ff81f5a1
+        git reset --hard ef691c2e315e53dbb0bd7ac83649ce823c9534f8
         git push --force
