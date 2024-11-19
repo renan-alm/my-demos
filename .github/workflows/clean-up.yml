@@ -1,5 +1,4 @@
 name: Cinderela Clean Up
-# Cleans up this repo every day at midnight
 
 on:
   schedule:
@@ -17,5 +16,5 @@ jobs:
 
     - name: Revert to specific commit
       run: |
-        git reset --hard b819319d3bfbb14890cdbf7dfbfff10ab38df50f
+        git reset --hard 1055057c240b1bcd0cc83f0600fabd3f4b8593f1
         git push --force
