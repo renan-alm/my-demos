@@ -1,8 +1,7 @@
 name: Cinderela Clean Up
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   revert:
