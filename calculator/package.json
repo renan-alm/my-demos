@@ -1,18 +1,19 @@
 {
   "name": "calculator",
   "version": "1.0.0",
-  "description": "A TypeScript CLI calculator",
-  "main": "dist/index.js",
+  "description": "A TypeScript web calculator",
+  "main": "dist/app.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc && node dist/index.js",
+    "start": "npx serve public -l 3000",
+    "dev": "tsc --watch",
     "test": "vitest run",
     "test:watch": "vitest"
   },
-  "keywords": ["calculator", "typescript", "cli"],
-  "author": "",
+  "keywords": ["calculator", "typescript", "web"],
+  "author": "Renan Alm",
+  "email": "renan-alm@github.com",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.11.0",

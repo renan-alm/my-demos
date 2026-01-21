@@ -134,13 +134,16 @@ function parseExpression(tokens: string[]): number {
 
   function parseMulDiv(): number {
     let left = parsePower();
-    while (pos < tokens.length && '*/'.includes(tokens[pos])) {
+    while (pos < tokens.length && '*/%'.includes(tokens[pos])) {
       const op = tokens[pos++];
       const right = parsePower();
       if (op === '*') left *= right;
       else if (op === '/') {
         if (right === 0) throw new Error('Cannot divide by zero');
         left /= right;
+      } else if (op === '%') {
+        if (right === 0) throw new Error('Cannot perform modulo by zero');
+        left %= right;
       }
     }
     return left;
