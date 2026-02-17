@@ -13,6 +13,14 @@ class Direction(Enum):
 
 class SnakeGame:
     def __init__(self, width=600, height=600, grid_size=20):
+        """
+        Initialize the Snake game.
+        
+        Args:
+            width: Window width in pixels (default: 600)
+            height: Window height in pixels (default: 600)
+            grid_size: Size of each grid cell in pixels (default: 20)
+        """
         pygame.init()
         
         self.width = width
@@ -140,15 +148,15 @@ class SnakeGame:
         
         if self.game_over:
             game_over_text = self.font.render('GAME OVER!', True, self.colors['text'])
-            score_text = self.font.render(f'Final Score: {self.score}', True, self.colors['text'])
+            final_score_text = self.font.render(f'Final Score: {self.score}', True, self.colors['text'])
             restart_text = self.small_font.render('Press SPACE to restart or ESC to quit', True, self.colors['text'])
             
             text_rect = game_over_text.get_rect(center=(self.width // 2, self.height // 2 - 50))
-            score_rect = score_text.get_rect(center=(self.width // 2, self.height // 2))
+            score_rect = final_score_text.get_rect(center=(self.width // 2, self.height // 2))
             restart_rect = restart_text.get_rect(center=(self.width // 2, self.height // 2 + 50))
             
             self.screen.blit(game_over_text, text_rect)
-            self.screen.blit(score_text, score_rect)
+            self.screen.blit(final_score_text, score_rect)
             self.screen.blit(restart_text, restart_rect)
         
         pygame.display.flip()
