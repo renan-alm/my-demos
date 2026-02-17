@@ -4,3 +4,6 @@ This repository is intended for demonstrating GitHub Copilot (GHCP) capabilities
 
 This section showcases the creation of boilerplates in different programming languages using GitHub Copilot. Each demo provides step-by-step instructions and examples to help you get started quickly and efficiently.
 
+### Snake Game (Python)
+A classic Snake game implementation using Pygame that replicates the nostalgic snake game from old phones. Control the snake, eat food, grow longer, and avoid crashing! See [snake-game/README.md](snake-game/README.md) for details.
+
