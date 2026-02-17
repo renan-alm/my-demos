@@ -81,7 +81,7 @@ game = SnakeGame(width=600, height=600, grid_size=20)
 
 ## Screenshot
 
-The game features:
+The game features (with default configuration):
 - A 30x30 grid (600x600 pixels with 20px cells)
 - Green snake with darker head
 - Red food
