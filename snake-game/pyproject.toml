@@ -1,0 +1,19 @@
+[project]
+name = "snake-game"
+version = "1.0.0"
+description = "Classic Nokia-style Snake game built with Pygame"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{ name = "Renan Alm" }]
+dependencies = ["pygame>=2.5.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
